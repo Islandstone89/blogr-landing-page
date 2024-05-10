@@ -219,6 +219,7 @@ textarea:not([rows]) {
 
 .start {
     padding-inline: var(--spacing-100);
+    margin-inline-end: var(--spacing-100);
 }
 
 .learn-more {
@@ -232,9 +233,7 @@ textarea:not([rows]) {
     }
 }
 
-.hero {
-    background-color: lightsalmon;
-}
+
 
 /* BASE STYLES */
 
@@ -285,7 +284,14 @@ body {
     display: flex;
     align-items: center;
     gap: var(--spacing-400);
+    padding-inline: var(--inline-padding);
+    padding-block-start: 3.5rem;
+
+    @media (width > 50rem) {
+        padding-block-start: 4rem;
+    }
 }
+
 
 .navbar__list {
     display: flex;
@@ -297,6 +303,44 @@ body {
     align-items: center;
     gap: var(--spacing-200);
     margin-inline-start: auto;
+}
+
+/* HERO */
+
+.hero {
+    background-color: lightsalmon;
+    text-align: center;
+    color: var(--clr-white);
+    padding-block-start: 7rem;
+    padding-block-end: 10rem;
+    padding-inline: 1.5rem;
+
+    @media (width > 50rem) {
+        padding-inline: 16rem;
+        padding-block-start: 8rem;
+    }
+}
+
+.main-heading {
+    font-size: var(--fs-700);
+
+    @media (width > 50rem) {
+        font-size: var(--fs-900);
+    }
+}
+
+.tagline {
+    --flow-space: 1.5rem;
+    font-size: var(--fs-400);
+
+    @media (width > 50rem) {
+        --flow-space: 2rem;
+        font-size: var(--fs-500);
+    }
+}
+
+.get-started {
+    --flow-space: 3rem;
 }
 
 
@@ -357,8 +401,44 @@ body {
 /* MIDDLE SECTION */
 
 .middle-section {
-    background-color: blue;
+    background-color: var(--clr-gradient-very-dark-desaturated-blue);
     color: var(--clr-white);
+    border-top-right-radius: 90px;
+    border-bottom-left-radius: 90px;
+    padding-inline: var(--inline-padding);
+}
+
+.middle-section__grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    row-gap: 3rem;
+
+    @media (width > 50rem) {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        column-gap: 6rem;
+    }
+}
+
+.middle-section__image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    @media (width > 50rem) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+}
+
+.middle-section__text {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    @media (width > 50rem) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
 }
 
 .middle-section__paragraph {
