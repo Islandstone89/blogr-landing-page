@@ -123,6 +123,7 @@ textarea:not([rows]) {
     --clr-very-dark-blue: hsl(208, 49%, 24%); /* #1f3e5a */
 
     /* Neutral */
+    --clr-white-bg: hsl(0, 0%, 98%) ;
     --clr-white: hsl(0, 0%, 100%); /* #fff */
     --clr-grayish-blue: hsl(240, 2%, 79%); /* #c8c8ca */
     --clr-very-dark-grayish-blue: hsl(207, 13%, 34%); /* #4c5862 */
@@ -244,6 +245,7 @@ body {
 
     @media (width > 50rem) {
         text-align: left;
+        background-color: var(--clr-white-bg);
     }
 }
 
@@ -256,8 +258,13 @@ body {
     font-weight: var(--fw-400);
 }
 
+:is(.top-section, .bottom-section) {
+    color: var(--clr-very-dark-grayish-blue);
+}
+
 :is(.top-section__heading, .bottom-section__heading){
     --flow-space: var(--spacing-500);
+    color: var(--clr-very-dark-blue);
 
     @media (width > 50rem) {
         --flow-space: var(--spacing-500);
@@ -294,6 +301,11 @@ body {
 
 
 /* TOP SECTION */
+
+.top-section__main-heading {
+    color: var(--clr-very-dark-blue);
+}
+
 
 .top-section__grid {
     --flow-space: var(--spacing-500);
