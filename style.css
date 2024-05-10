@@ -1,0 +1,446 @@
+
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove default list styles */
+:is(ul, ol){
+  list-style: none;
+  padding: 0;
+}
+
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* Avoid orphans on paragraphs */
+p {
+    text-wrap: pretty;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+  display: inline-block;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('assets/fonts/Overpass-Light.woff2') format("woff2");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('assets/fonts/Overpass-SemiBold.woff2') format("woff2");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Regular.woff2') format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Medium.woff2') format("woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('assets/fonts/Ubuntu-Bold.woff2') format("woff2");
+    font-weight: 700;
+}
+
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    /* COLORS */
+
+    /* Primary */
+    --clr-light-red: hsl(356, 100%, 66%); /* #ff505c */
+    --clr-light-red-darker: hsl(from var(--clr-light-red) h s 46%); /* #eb0010 */
+    --clr-very-light-red: hsl(355, 100%, 74%); /* #ff7b86 */
+    --clr-very-light-red-darker: hsl(from var(--clr-very-light-red) h s 44%); /* #e00013 */
+    --clr-very-dark-blue: hsl(208, 49%, 24%); /* #1f3e5a */
+
+    /* Neutral */
+    --clr-white: hsl(0, 0%, 100%); /* #fff */
+    --clr-grayish-blue: hsl(240, 2%, 79%); /* #c8c8ca */
+    --clr-very-dark-grayish-blue: hsl(207, 13%, 34%); /* #4c5862 */
+    --clr-very-dark-black-blue: hsl(240, 10%, 16%); /* #24242c */
+
+    /* Gradient - mobile nav */
+    --clr-gradient-very-light-red: hsl(13, 100%, 72%); /* #ff8f70 */
+    --clr-gradient-light-red: hsl(353, 100%, 62%); /* #ff3d54 */
+
+    /* Gradient - body */
+    --clr-gradient--very-dark-gray-blue: hsl(237, 17%, 21%); /* #2c2d3f */
+    --clr-gradient-very-dark-desaturated-blue: hsl(237, 23%, 32%); /* #3f4164 */
+
+    /* TYPOGRAPHY */
+
+    --ff-overpass: 'Overpass';
+    --ff-ubuntu: 'Ubuntu';
+
+    --fs-300: 1rem; /* 16px */ 
+    --fs-400: 1.125rem; /* 18px */
+    --fs-500: 1.25rem; /* 20px */
+    --fs-600: 1.75rem; /* 28px */
+    --fs-700: 2.25rem; /* 36px */
+    --fs-800: 2.5rem; /* 40px */
+    --fs-900: 4rem; /* 64px */
+
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    
+    --inline-padding: 1.5rem;
+
+    @media (width > 50rem) {
+        --inline-padding: 10rem;
+    }
+
+    
+    --spacing-100: 1rem;
+    --spacing-200: 2rem;
+    --spacing-300: 2.5rem;
+    --spacing-400: 4rem;
+    --spacing-500: 4.5rem;
+
+    --flow-spacer: 6rem;
+
+    @media (width > 50rem) {
+        --flow-spacer: 16rem;
+    }
+    
+}
+
+/* UTILITIES */
+
+.flow {
+    --flow-space: var(--flow-spacer);
+}
+
+.flow > * + * {
+    margin-block-start: var(--flow-space, 1rem);
+}
+
+/* COMPONENTS */
+
+.btn {
+    --btn-text-color: var(--clr-light-red-darker);
+    --btn-background-color: var(--clr-white);
+    --btn-border-color: var(--clr-white);
+    --btn-border-radius: 30px;
+
+    font-family: var(--ff-ubuntu);
+    font-weight: var(--fw-700);
+    padding-block: var(--spacing-100);
+    padding-inline: 1.5rem;
+    border: 1px solid var(--btn-border-color);
+    border-radius: var(--btn-border-radius);
+    background-color: var(--btn-background-color);
+    color: var(--btn-text-color);
+
+    &:is(:hover, :focus-visible) {
+        --btn-background-color: var(--clr-very-light-red-darker);
+        --btn-text-color: var(--clr-white);
+        --btn-border-color: var(--clr-very-light-red-darker);
+        transition: .2s;
+    }
+}
+
+.sign-up {
+    padding-inline: var(--spacing-300);
+}
+
+.start {
+    padding-inline: var(--spacing-100);
+}
+
+.learn-more {
+    --btn-background-color: transparent;
+    --btn-text-color: var(--clr-white);
+
+    &:is(:hover, :focus-visible) {
+        --btn-background-color: var(--clr-white);
+        --btn-border-color: var(--clr-white);
+        --btn-text-color: var(--clr-very-light-red-darker);
+    }
+}
+
+.hero {
+    background-color: lightsalmon;
+}
+
+/* BASE STYLES */
+
+body {
+    font-family: var(--ff-overpass);
+    font-weight: var(--fw-300);
+    text-align: center;
+
+    @media (width > 50rem) {
+        text-align: left;
+    }
+}
+
+.main {
+    padding-block-end: var(--flow-spacer);
+}
+
+:is(.header, .footer) {
+    font-family: var(--ff-ubuntu);
+    font-weight: var(--fw-400);
+}
+
+:is(.top-section__heading, .bottom-section__heading){
+    --flow-space: var(--spacing-500);
+
+    @media (width > 50rem) {
+        --flow-space: var(--spacing-500);
+    }
+}
+
+:is(.top-section__paragraph, .bottom-section__paragraph) {
+    --flow-space: var(--spacing-100);
+}
+
+/* GENERAL STYLING */
+
+/* HEADER */
+
+.header {
+    background-color: var(--clr-gradient-very-light-red);
+    color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-400);
+}
+
+.navbar__list {
+    display: flex;
+    gap: var(--spacing-200);
+}
+
+.utilities {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200);
+    margin-inline-start: auto;
+}
+
+
+/* TOP SECTION */
+
+.top-section__grid {
+    --flow-space: var(--spacing-500);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    row-gap: 3rem;
+    align-items: center;
+
+    @media (width > 50rem) {
+        --flow-space: 6rem;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        column-gap: 6rem;
+    }
+}
+
+.top-section__image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    @media (width > 50rem) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+}
+
+.top-section__text {
+    padding-inline-start: var(--inline-padding);
+    padding-inline-end: var(--inline-padding);
+
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    @media (width > 50rem) {
+        padding-inline-start: var(--inline-padding);
+        padding-inline-end: 0;
+
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+}
+
+.top-section__main-heading {
+    text-align: center;
+}
+
+
+/* MIDDLE SECTION */
+
+.middle-section {
+    background-color: blue;
+    color: var(--clr-white);
+}
+
+.middle-section__paragraph {
+    --flow-space: .5rem;
+}
+
+/* BOTTOM SECTION */
+
+.bottom-section__grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    row-gap: 3rem;
+
+    @media (width > 50rem) {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        column-gap: 6rem;
+    }
+}
+
+.bottom-section__text {
+    padding-inline-start: var(--inline-padding);
+    padding-inline-end: var(--inline-padding);
+
+    @media (width > 50rem) {
+        padding-inline-start: 0;
+        padding-inline-end: var(--inline-padding);
+    }
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--clr-very-dark-black-blue);
+    color: var(--clr-grayish-blue);
+    font-size: var(--fs-400);
+    border-top-right-radius: 80px;
+
+    @media (width > 50rem) {
+        font-size: var(--fs-300);
+    }
+}
+
+.footer-wrapper {
+    padding-block: var(--spacing-500);
+    padding-inline: var(--inline-padding);
+
+    @media (width > 50rem) {
+        padding-block: var(--spacing-500);
+        padding-inline: var(--inline-padding);
+    }
+
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--spacing-500);
+    justify-content: center;
+
+    @media (width > 50rem) {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.footer-logo {
+    margin-inline: auto;
+    margin-block-end: 2rem;
+
+    @media (width > 50rem) {
+        margin-inline: initial;
+    }
+}
+
+.footer__heading {
+    color: var(--clr-white);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-500);
+}
+
+.footer__list {
+    --flow-space: 1.3rem;
+}
+
+.footer__item {
+    line-height: 1.8;
+
+    @media (width > 50rem) {
+        line-height: 2;
+    }
+}
+
+.footer__link:is(:hover, :focus-visible) {
+    text-decoration: underline;
+}
