@@ -130,8 +130,8 @@ textarea:not([rows]) {
     --clr-very-dark-black-blue: hsl(240, 10%, 16%); /* #24242c */
 
     /* Gradient - mobile nav */
-    --clr-gradient-very-light-red: hsl(13, 100%, 72%); /* #ff8f70 */
-    --clr-gradient-light-red: hsl(353, 100%, 62%); /* #ff3d54 */
+    --clr-gradient-very-light-red: hsl(13, 100%, 72%); /* #ff8f71 */
+    --clr-gradient-light-red: hsl(353, 100%, 62%); /* #ff3e55 */
 
     /* Gradient - body */
     --clr-gradient--very-dark-gray-blue: 	hsl(237, 17%, 21%); /* 2D2E40 */
@@ -279,17 +279,20 @@ body {
 /* HEADER */
 
 .header {
-    background-color: var(--clr-gradient-very-light-red);
+    background: linear-gradient(45deg, var(--clr-gradient-very-light-red), var(--clr-gradient-light-red));
     color: var(--clr-white);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-400);
     padding-inline: var(--inline-padding);
     padding-block-start: 3.5rem;
 
     @media (width > 50rem) {
         padding-block-start: 4rem;
     }
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-400);
 }
 
 
@@ -305,20 +308,18 @@ body {
     margin-inline-start: auto;
 }
 
-/* HERO */
-
-.hero {
-    background-color: lightsalmon;
-    text-align: center;
-    color: var(--clr-white);
-    padding-block-start: 7rem;
-    padding-block-end: 10rem;
-    padding-inline: 1.5rem;
+.header-bottom {
+    --flow-space: 7rem;
 
     @media (width > 50rem) {
-        padding-inline: 16rem;
-        padding-block-start: 8rem;
+        --flow-space: 8rem;
     }
+}
+
+.hero {
+    text-align: center;
+    color: var(--clr-white);
+    padding-block-end: 10rem;
 }
 
 .main-heading {
@@ -348,6 +349,11 @@ body {
 
 .top-section__main-heading {
     color: var(--clr-very-dark-blue);
+    padding-block-start: 6rem;
+
+    @media (width> 50rem) {
+        padding-block-start: 10rem;
+    }
 }
 
 
@@ -401,8 +407,8 @@ body {
 /* MIDDLE SECTION */
 
 .middle-section {
+    position: relative;
     background-image: url('images/bg-pattern-circles.svg');
-    background-repeat: no-repeat;
     background: linear-gradient(45deg, var(--clr-gradient--very-dark-gray-blue), var(--clr-gradient-very-dark-desaturated-blue));
     color: var(--clr-white);
     border-top-right-radius: 90px;
@@ -414,6 +420,14 @@ body {
         padding-block-start: 7rem;
     }
 }
+
+/* .middle-section::before {
+    content: url('images/bg-pattern-circles.svg');
+    position: absolute;
+    bottom: 0;
+    left: -13rem;
+    z-index: -1;
+} */
 
 .middle-section__grid {
     display: grid;
@@ -445,6 +459,7 @@ body {
     @media (width > 50rem) {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+        align-self: center;
     }
 }
 
