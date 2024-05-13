@@ -14,20 +14,32 @@
     <header class="header flow">
       <div class="header-top">
 
-        <img src="images/logo.svg" alt="Blogr - Home">
+        <img src="images/logo.svg" alt="Blogr - Home" class="logo-image">
 
-        <nav class="navbar">
-          <ul class="navbar__list">
-            <li class="navbar__item"><a href="#" class="navbar__link">Product</a></li>
-            <li class="navbar__item"><a href="#" class="navbar__link">Company</a></li>
-            <li class="navbar__item"><a href="#" class="navbar__link">Connect</a></li>
-          </ul><!-- end navbar__list -->
-        </nav><!-- end navbar -->
+        <div class="header__link-container">
+          <nav class="navbar">
+            <ul class="navbar__list">
+              <li class="navbar__item"><a href="#" class="navbar__link">Product</a></li>
+              <li class="navbar__item"><a href="#" class="navbar__link">Company</a></li>
+              <li class="navbar__item"><a href="#" class="navbar__link">Connect</a></li>
+            </ul><!-- end navbar__list -->
+          </nav><!-- end navbar -->
 
-          <div class="utilities">
-            <a href="#">Login</a>
-            <a href="#" class="btn sign-up">Sign Up</a>
-          </div><!-- end utilities -->
+            <div class="utilities">
+              <a href="#">Login</a>
+              <a href="#" class="btn sign-up">Sign Up</a>
+            </div><!-- end utilities -->
+
+          </div><!-- end header__link-container-->
+
+          <button class="menu-btn open-menu-btn js-open-menu-btn" aria-expanded="false">
+            <img src="images/icon-hamburger.svg" alt="Open menu">
+          </button><!-- end open-menu-btn -->
+
+          <button class="menu-btn close-menu-btn js-close-menu-btn">
+            <img src="images/icon-close.svg" alt="Close menu">
+          </button><!-- end close-menu-btn -->
+
         </div><!-- end header-top -->
 
         <div class="header-bottom">
