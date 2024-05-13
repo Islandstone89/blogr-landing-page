@@ -420,12 +420,15 @@ body {
     border-top-right-radius: 90px;
     border-bottom-left-radius: 90px;
     padding-inline: var(--inline-padding);
-    padding-block-end: 7rem;
+    margin-block-start: 16rem;
+    padding-block-end: 6rem;
 
-    @media (width > 50rem) {
-        padding-block-start: 7rem;
+    @media (width > 50rem ) {
+        padding-block-end: 0;
     }
+    
 }
+
 
 /* .middle-section::before {
     content: url('images/bg-pattern-circles.svg');
@@ -448,14 +451,22 @@ body {
     }
 }
 
-.middle-section__image {
+
+.middle-section__image-wrapper {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    margin-block-start: -200px;
 
     @media (width > 50rem) {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+        margin-block-start: -80px;
     }
+}
+
+.middle-section__image {
+    object-fit: contain;
+    height: 130%;
 }
 
 .middle-section__text {
