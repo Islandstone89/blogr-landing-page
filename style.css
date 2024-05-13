@@ -283,9 +283,11 @@ body {
     color: var(--clr-white);
     padding-inline: var(--inline-padding);
     padding-block-start: 3.5rem;
+    border-bottom-left-radius: 90px;
 
     @media (width > 50rem) {
         padding-block-start: 4rem;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, .5);
     }
 }
 
@@ -415,6 +417,8 @@ body {
 .middle-section {
     position: relative;
     background-image: url('images/bg-pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-position: bottom;
     background: linear-gradient(45deg, var(--clr-gradient--very-dark-gray-blue), var(--clr-gradient-very-dark-desaturated-blue));
     color: var(--clr-white);
     border-top-right-radius: 90px;
@@ -433,9 +437,11 @@ body {
 /* .middle-section::before {
     content: url('images/bg-pattern-circles.svg');
     position: absolute;
-    bottom: 0;
-    left: -13rem;
+    top: -300px;
+    left: -300px;
     z-index: -1;
+    width: 500px;
+    height: 500px;
 } */
 
 .middle-section__grid {
