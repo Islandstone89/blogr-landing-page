@@ -20,26 +20,70 @@
 
         <div class="header__link-container">
           <nav class="navbar">
-            <ul class="navbar__list">
-              <li class="navbar__item"><a href="#" class="navbar__link">Product</a></li>
-              <li class="navbar__item"><a href="#" class="navbar__link">Company</a></li>
-              <li class="navbar__item"><a href="#" class="navbar__link">Connect</a></li>
-            </ul><!-- end navbar__list -->
+
+            <div class="navbar__item">
+              <button class="navbar__button js-navbar__button" aria-expanded="false">
+                Product
+                <img src="images/icon-arrow-light.svg" alt="" class="navbar__icon">
+              </button><!-- end navbar__button -->
+
+              <div class="navbar__list-wrapper">
+                <ul class="navbar__list">
+                  <li class="navbar__list-item"><a href="#">Overview</a></li>
+                  <li class="navbar__list-item"><a href="#">Pricing</a></li>
+                  <li class="navbar__list-item"><a href="#">Marketplace</a></li>
+                  <li class="navbar__list-item"><a href="#">Features</a></li>
+                  <li class="navbar__list-item"><a href="#">Integrations</a></li>
+                </ul>
+              </div><!-- end navbar__list-wrapper -->
+            </div><!-- end navbar__item -->
+
+            <div class="navbar__item">
+              <button class="navbar__button js-navbar__button" aria-expanded="false">
+                Company
+                <img src="images/icon-arrow-light.svg" alt="" class="navbar__icon">
+              </button><!-- end navbar__button -->
+
+              <div class="navbar__list-wrapper">
+                <ul class="navbar__list">
+                  <li class="navbar__list-item"><a href="#">About</a></li>
+                  <li class="navbar__list-item"><a href="#">Team</a></li>
+                  <li class="navbar__list-item"><a href="#">Blog</a></li>
+                  <li class="navbar__list-item"><a href="#">Careers</a></li>
+                </ul>
+              </div><!-- end navbar__list-wrapper -->
+            </div>
+
+            <div class="navbar__item">
+              <button class="navbar__button js-navbar__button" aria-expanded="false">
+                Connect
+                <img src="images/icon-arrow-light.svg" alt="" class="navbar__icon">
+              </button><!-- end navbar__button -->
+
+              <div class="navbar__list-wrapper">
+                <ul class="navbar__list">
+                  <li class="navbar__list-item"><a href="#">Contact</a></li>
+                  <li class="navbar__list-item"><a href="#">Newsletter</a></li>
+                  <li class="navbar__list-item"><a href="#">LinkedIn</a></li>
+                </ul>
+              </div><!-- end navbar__list-wrapper -->
+            </div>
+
           </nav><!-- end navbar -->
 
-            <div class="utilities">
-              <a href="#">Login</a>
-              <a href="#" class="btn sign-up">Sign Up</a>
-            </div><!-- end utilities -->
+          <div class="utilities">
+            <a href="#">Login</a>
+            <a href="#" class="btn sign-up">Sign Up</a>
+          </div><!-- end utilities -->
 
-          </div><!-- end header__link-container-->
+        </div><!-- end header__link-container-->
 
           <button class="menu-btn open-menu-btn js-open-menu-btn" aria-expanded="false">
-            <img src="images/icon-hamburger.svg" alt="Open menu">
+            <img src="images/icon-hamburger.svg" alt="Open menu" class="open-menu-icon">
           </button><!-- end open-menu-btn -->
 
           <button class="menu-btn close-menu-btn js-close-menu-btn">
-            <img src="images/icon-close.svg" alt="Close menu">
+            <img src="images/icon-close.svg" alt="Close menu" class="close-menu-icon">
           </button><!-- end close-menu-btn -->
 
         </div><!-- end header-top -->
@@ -168,29 +212,3 @@
 
   </body>
 </html>
-
-
-
-
-
-
-
-Overview
-Pricing
-Marketplace
-Features
-Integrations
-
-
-
-About
-Team
-Blog
-Careers
-
-
-
-Contact
-Newsletter
-LinkedIn
-
