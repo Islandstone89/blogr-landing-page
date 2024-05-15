@@ -2,14 +2,21 @@
 /* Select the navbar buttons */
 let navbarButtons = document.querySelectorAll(".js-navbar__button");
 
+/* Create disclosure toggle function */
+function toggleDisclosure() {
+  if (this.getAttribute("aria-expanded") === "true") {
+    navbarButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+  } else {
+    navbarButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+    this.setAttribute("aria-expanded", "true");
+  }
+}
 
+/* Loop through navbar buttons and add Event Listener */
+navbarButtons.forEach((button) => {
+  button.addEventListener("click", toggleDisclosure)
+})
 
-/* Loop through each of the buttons and assign Event Listener and arrow function */
-navbarButtons.forEach(button  => {
-    button.addEventListener("click", (e) => {
-        button.setAttribute("aria-expanded", "true")
-    } )
-});
 
 
 
@@ -38,3 +45,12 @@ openMenuBtn.addEventListener("click", openMenu)
 
 /* Add Event Listener on close menu button */
 closeMenuBtn.addEventListener("click", closeMenu)
+
+/* function toggleDisclosure() {
+    if (this.getAttribute("aria-expanded") === "true") {
+      disclosureButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+    } else {
+      disclosureButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
+      this.setAttribute("aria-expanded", "true");
+    }
+  } */
