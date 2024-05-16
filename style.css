@@ -474,14 +474,12 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    gap: var(--spacing-200);
+    gap: var(--spacing-400);
 }
 
 .navbar__item {
     position: relative;
 }
-
-
 
 .navbar__list-wrapper {
     position: absolute;

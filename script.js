@@ -12,6 +12,7 @@ function toggleDisclosure() {
   }
 }
 
+
 /* Loop through navbar buttons and add Event Listener */
 navbarButtons.forEach((button) => {
   button.addEventListener("click", toggleDisclosure)
@@ -45,12 +46,3 @@ openMenuBtn.addEventListener("click", openMenu)
 
 /* Add Event Listener on close menu button */
 closeMenuBtn.addEventListener("click", closeMenu)
-
-/* function toggleDisclosure() {
-    if (this.getAttribute("aria-expanded") === "true") {
-      disclosureButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
-    } else {
-      disclosureButtons.forEach((button) => button.setAttribute("aria-expanded", "false"));
-      this.setAttribute("aria-expanded", "true");
-    }
-  } */
