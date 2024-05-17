@@ -358,7 +358,7 @@ body {
 
 
 
-.header:has(.navbar__button[aria-expanded="true"]) {
+.navbar__item:has(.navbar__button[aria-expanded="true"]) {
     .navbar__icon {
         transform: rotate(180deg);
     }
