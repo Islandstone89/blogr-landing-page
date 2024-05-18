@@ -634,6 +634,15 @@ body {
     margin-block-start: 16rem;
     padding-block-end: 6rem;
 
+
+    background-image:url(./images/bg-pattern-circles.svg), linear-gradient(
+    to right,
+    var(--clr-very-dark-gray-blue),
+    var(--clr-very-dark-desaturated-blue));
+    background-position: top -150%;
+    background-repeat: no-repeat;
+    background-size: 150%;
+
     @media (width > 50rem ) {
         padding-block-end: 0;
     }
