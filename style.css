@@ -350,9 +350,33 @@ body {
     padding-block-start: 3.5rem;
     border-bottom-left-radius: 90px;
 
+
+    background-image:url(./images/bg-pattern-intro-mobile.svg), linear-gradient(
+            to right,
+         hsl(13, 100%, 72%)19%,
+         hsl(353, 100%, 62%)50%);
+        background-position:  27% 52%;
+        background-repeat: no-repeat;
+        background-size: 220%;
+
+        background-image:url(./images/logo), linear-gradient(
+            to right,
+         var(--clr-gradient-very-light-red-darker),
+         var(--clr-gradient-light-red-darker));
+   
+
+
     @media (width > 50rem) {
         padding-block-start: 4rem;
         box-shadow: 0 4px 4px rgba(0, 0, 0, .5);
+
+        background-image:url(./images/bg-pattern-intro-desktop.svg), linear-gradient(
+            to right,
+         hsl(13, 100%, 72%)19%,
+         hsl(353, 100%, 62%)50%);
+        background-position:  27% 52%;
+        background-repeat: no-repeat;
+        background-size: 100%;
     }
 }
 
@@ -441,10 +465,6 @@ body {
         right: 2px;
     }
 }
-
-
-
-
 
 
 
