@@ -139,7 +139,7 @@ textarea:not([rows]) {
     --clr-gradient-very-light-red: hsl(13, 100%, 72%); /* #ff8f71 */
     --clr-gradient-very-light-red-darker: hsl(from var(--clr-gradient-very-light-red)h 80% 40%); /* #b83814 */
     --clr-gradient-light-red: hsl(353, 100%, 62%); /* #ff3e55 */
-    --clr-gradient-light-red-darker: hsl(from var(--clr-gradient-light-red)h 80% 40%); /* #eb475a */
+    --clr-gradient-light-red-darker: hsl(from var(--clr-gradient-light-red)h 80% 30%); /* #8a0f1e */
 
     /* Gradient - body */
     --clr-very-dark-gray-blue: hsl(237, 17%, 21%); /* 2D2E40 */
@@ -344,41 +344,33 @@ body {
 /* HEADER */
 
 .header {
-    background: linear-gradient(90deg, var(--clr-gradient-very-light-red-darker), var(--clr-gradient-light-red-darker));
     color: var(--clr-white);
     padding-inline: var(--inline-padding);
     padding-block-start: 3.5rem;
     border-bottom-left-radius: 90px;
 
-
-    background-image:url(./images/bg-pattern-intro-mobile.svg), linear-gradient(
-            to right,
-         hsl(13, 100%, 72%)19%,
-         hsl(353, 100%, 62%)50%);
-        background-position:  27% 52%;
-        background-repeat: no-repeat;
-        background-size: 220%;
-
-        background-image:url(./images/logo), linear-gradient(
+    background-image:url(./images/test.svg), linear-gradient(
             to right,
          var(--clr-gradient-very-light-red-darker),
          var(--clr-gradient-light-red-darker));
-   
+    background-position:  27% 52%;
+    background-repeat: no-repeat;
+    background-size: 200%;
 
 
     @media (width > 50rem) {
         padding-block-start: 4rem;
         box-shadow: 0 4px 4px rgba(0, 0, 0, .5);
-
-        background-image:url(./images/bg-pattern-intro-desktop.svg), linear-gradient(
-            to right,
-         hsl(13, 100%, 72%)19%,
-         hsl(353, 100%, 62%)50%);
         background-position:  27% 52%;
         background-repeat: no-repeat;
-        background-size: 100%;
+
+        background-image:url(./images/test-2.svg), linear-gradient(
+            to right,
+         var(--clr-gradient-very-light-red-darker),
+         var(--clr-gradient-light-red-darker));
     }
 }
+
 
 
 
